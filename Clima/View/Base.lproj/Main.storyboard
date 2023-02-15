@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -42,7 +42,7 @@
                                                 <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yd6-Tg-cUv">
                                                 <rect key="frame" x="334" y="0.0" width="40" height="40"/>
@@ -54,6 +54,9 @@
                                                 <buttonConfiguration key="configuration" style="plain">
                                                     <backgroundConfiguration key="background" image="magnifyingglass" catalog="system"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvg-6K-6M6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -120,6 +123,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="mka-KI-W2r" id="uFe-gz-e0r"/>
                         <outlet property="conditionImageView" destination="cIh-m0-m4P" id="PXf-Dq-o6K"/>
+                        <outlet property="searchTextField" destination="ulv-Bf-fgF" id="DH5-s4-r7L"/>
                         <outlet property="temperatureLabel" destination="xCP-ok-3Y9" id="kI2-IJ-4HH"/>
                     </connections>
                 </viewController>
