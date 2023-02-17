@@ -15,13 +15,11 @@ class WeatherViewController: UIViewController,
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tapGesture)
-        
+
         searchTextField.delegate = self
         
     }
@@ -47,7 +45,10 @@ class WeatherViewController: UIViewController,
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //Use searchTextField to get the weather for that city.
+        
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
         
         searchTextField.text = ""
     }
